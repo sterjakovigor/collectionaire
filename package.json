@@ -1,0 +1,34 @@
+{
+  "name": "collectionaire",
+  "version": "1.0.0",
+  "description": "Simple API for array of objects",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sterjakovigor/collectionaire.git"
+  },
+  "keywords": [
+    "collections",
+    "array",
+    "objects"
+  ],
+  "author": "Sterjakov Igor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sterjakovigor/collectionaire/issues"
+  },
+  "homepage": "https://github.com/sterjakovigor/collectionaire#readme",
+  "devDependencies": {
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-object-rest-spread": "^6.16.0",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-stage-1": "^6.16.0",
+    "babel-register": "^6.16.3",
+    "webpack": "^1.13.2"
+  }  
+}
