@@ -1,6 +1,6 @@
 import collection from '../src/Collectionaire'
 
-describe("Collectionaire", () => {
+describe("Collection", () => {
 
   let testCollection
 
@@ -12,24 +12,40 @@ describe("Collectionaire", () => {
     ]
   })
 
-  it("should update values by string condition", () => {
-    // collection(testCollection)
-    //   .where('id = 1, id == 1, id != 1, id > 0, id >= 0, id < 0, id <= 0')
-    //   .where('id = false, id = "true life", id = :id', { id: [ 1,2,3 ] })
-    //   .filter()
-    // TODO: should update values by string condition
-  })
-
-
-  it("should toggle collection with where condition", () => {
+  it("think", => {
     let newCollection =
       collection(testCollection)
-        .where({ id: { $lt: 1 } })
-        .toggle({ active: [false, true], name: ['Русский', 'Portuges'] })
+      .where(lang => lang.id == 0)
+      .result('all') // matched, mismatched, all
+      .update({
+        active: false,
+        name: 'Portuges'
+      })
+
+  })
+
+  it("update", () => {
+    let newCollection =
+      collection(testCollection)
+      .where(lang => lang.id == 0)
+      .update({
+        active: false,
+        name: 'Portuges'
+      })
     expect(newCollection[0].name).toEqual('Portuges')
-    newCollection.forEach((element) => {
-      expect(element.active).toEqual(false)
-    })
+    newCollection.forEach( element => expect(element.active).toEqual(false) )
+  })
+
+  it("toggle", () => {
+    let newCollection =
+      collection(testCollection)
+      .where(lang => lang.id == 0)
+      .toggle({
+        name:   ['Русский', 'Portuges'],
+        active: [false, true],
+      })
+    expect(newCollection[0].name).toEqual('Portuges')
+    newCollection.forEach( element => expect(element.active).toEqual(false) )
   })
 
 })

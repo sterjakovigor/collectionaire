@@ -1,5 +1,5 @@
 {
-  "name": "collectionaire",
+  "name": "rower",
   "version": "1.0.0",
   "description": "Simple API for array of objects",
   "main": "src/index.js",
@@ -30,5 +30,5 @@
     "babel-preset-stage-1": "^6.16.0",
     "babel-register": "^6.16.3",
     "webpack": "^1.13.2"
-  }  
+  }
 }
