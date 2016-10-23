@@ -1,2 +1,2 @@
-import Rower from './lib/Rower.js'
+import Rower from './lib/Rower'
 export default Rower

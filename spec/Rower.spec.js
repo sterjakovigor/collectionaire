@@ -1,4 +1,4 @@
-import rower from '../src/Rower'
+import rower from '../src/'
 
 describe("Collection", () => {
 
