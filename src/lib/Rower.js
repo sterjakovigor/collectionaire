@@ -1,7 +1,5 @@
 class Rower {
 
-  _result = 'all'
-
   _where = []
 
   _elements = []
@@ -101,6 +99,6 @@ class Rower {
 
 }
 
-export default function(collection = false) {
-  return new Rower(collection)
+export default function(elements = false) {
+  return new Rower(elements)
 }
