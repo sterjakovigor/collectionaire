@@ -15,6 +15,8 @@ class Rower {
       true: 0
     }
 
+    if(score.total == 0) { return true }
+
     this._where.forEach((condition, index) => {
       if(condition(element)){
         score.true++
@@ -28,6 +30,10 @@ class Rower {
     } else {
       return false
     }
+  }
+
+  sort(callback) {
+    return this._elements.concat().sort(callback)
   }
 
   find() {

@@ -12,6 +12,14 @@ describe("Collection", () => {
     ]
   })
 
+  it("sort", () => {
+    let newCollection =
+      rower(testCollection)
+      .sort((a,b) => { return b.id - a.id })
+    expect(newCollection[0].id).toEqual(2)
+    expect(testCollection).not.toEqual(newCollection)
+  })
+
   it("multiple where", () => {
     let newCollection =
       rower(testCollection)
