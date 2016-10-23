@@ -59,13 +59,12 @@ Rower is a simple API for your array of objects which always return a new array.
 
 ```javascript
   ducks
-    .where(duck => duck.name == 'Anastasia')
-    .toggle({ id: 777, name: 'Joker' })
+    .toggle({ id: [0, 1], name: ['Igor', 'Anastasia'] })
 
   // [
-  //   { id: 0,   name: 'Igor'   },
-  //   { id: 777, name: 'Joker'  },    
-  //   { id: 2,   name: 'Gloria' },
+  //   { id: 1,   name: 'Anastasia'  },
+  //   { id: 0,   name: 'Igor'       },    
+  //   { id: 2,   name: 'Gloria'     },
   // ]
 ```
 
