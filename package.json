@@ -1,11 +1,11 @@
 {
   "name": "rower",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple API for array of objects",
   "main": "dist/index.js",
   "scripts": {
     "test": "jasmine",
-    "dist": "babel src --out-dir dist"    
+    "dist": "babel src --out-dir dist"
   },
   "repository": {
     "type": "git",
