@@ -1,6 +1,6 @@
 {
   "name": "rower",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Simple API for array of objects",
   "main": "dist/index.js",
   "scripts": {

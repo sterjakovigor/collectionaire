@@ -55,6 +55,22 @@ ducks
 // ]      
 ```
 
+## Create
+
+```javascript
+ducks
+  .where(duck => duck.id > 0)    
+  .create((duck) => {
+    return `Hello! I'm ${duck.name}`
+  })
+
+  // [
+  //   "Hello! I'm Anastasia",
+  //   "Hello! I'm Gloria",
+  // ]
+```
+
+
 ## Sort
 
 ```javascript

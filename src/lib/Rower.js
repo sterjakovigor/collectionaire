@@ -32,6 +32,16 @@ class Rower {
     }
   }
 
+  create(callback) {
+    let newElements = []
+    this._elements.forEach((element, index) => {
+      if (this.matched(element)) {
+        newElements.push(callback(element))
+      }
+    })
+    return this._elements = newElements
+  }
+
   sort(callback) {
     return this._elements.concat().sort(callback)
   }

@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _Rower = require('./lib/Rower.js');
+var _Rower = require('./lib/Rower');
 
 var _Rower2 = _interopRequireDefault(_Rower);
 

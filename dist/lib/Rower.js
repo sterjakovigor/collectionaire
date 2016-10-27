@@ -35,6 +35,10 @@ var Rower = function () {
         true: 0
       };
 
+      if (score.total == 0) {
+        return true;
+      }
+
       this._where.forEach(function (condition, index) {
         if (condition(element)) {
           score.true++;
@@ -50,12 +54,30 @@ var Rower = function () {
       }
     }
   }, {
-    key: "find",
-    value: function find() {
+    key: "create",
+    value: function create(callback) {
       var _this = this;
 
-      return this._elements.filter(function (element, index) {
+      var newElements = [];
+      this._elements.forEach(function (element, index) {
         if (_this.matched(element)) {
+          newElements.push(callback(element));
+        }
+      });
+      return this._elements = newElements;
+    }
+  }, {
+    key: "sort",
+    value: function sort(callback) {
+      return this._elements.concat().sort(callback);
+    }
+  }, {
+    key: "find",
+    value: function find() {
+      var _this2 = this;
+
+      return this._elements.filter(function (element, index) {
+        if (_this2.matched(element)) {
           return true;
         } else {
           return false;
@@ -78,10 +100,10 @@ var Rower = function () {
   }, {
     key: "delete",
     value: function _delete() {
-      var _this2 = this;
+      var _this3 = this;
 
       return this._elements.filter(function (element, index) {
-        if (_this2.matched(element)) {
+        if (_this3.matched(element)) {
           return false;
         } else {
           return true;
@@ -91,10 +113,10 @@ var Rower = function () {
   }, {
     key: "update",
     value: function update(newElement) {
-      var _this3 = this;
+      var _this4 = this;
 
       return this._elements.map(function (element, index) {
-        if (_this3.matched(element)) {
+        if (_this4.matched(element)) {
           return _extends({ element: element }, newElement);
         } else {
           return element;
@@ -104,15 +126,15 @@ var Rower = function () {
   }, {
     key: "toggle",
     value: function toggle(options) {
-      var _this4 = this;
+      var _this5 = this;
 
       return this._elements.map(function (element, index) {
         var toggledElement = _extends({}, element);
         for (var key in options) {
           var first = options[key][0];
           var second = options[key][1];
-          if (_this4.matched(element)) {
-            toggledElement = _this4.toggleElement(toggledElement, key, first, second);
+          if (_this5.matched(element)) {
+            toggledElement = _this5.toggleElement(toggledElement, key, first, second);
           }
         }
         return toggledElement;
