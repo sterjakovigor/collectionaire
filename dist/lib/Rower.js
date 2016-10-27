@@ -58,10 +58,11 @@ var Rower = function () {
     value: function create(callback) {
       var _this = this;
 
+      var counter = 0;
       var newElements = [];
       this._elements.forEach(function (element, index) {
         if (_this.matched(element)) {
-          newElements.push(callback(element));
+          newElements.push(callback(element, counter++));
         }
       });
       return this._elements = newElements;
