@@ -16,12 +16,12 @@ describe("Collection", () => {
     let newCollection =
       rower(testCollection)
       .where(lang => lang.active == false)
-      .create((lang) => {
-        return `Active lang is: ${lang.name}`
+      .create((lang, index) => {
+        return `${index}. Active lang is: ${lang.name}`
       })
 
-    expect(newCollection[0]).toEqual(`Active lang is: English`)
-    expect(newCollection[1]).toEqual(`Active lang is: Française`)
+    expect(newCollection[0]).toEqual(`0. Active lang is: English`)
+    expect(newCollection[1]).toEqual(`1. Active lang is: Française`)
   })
 
   it("sort", () => {

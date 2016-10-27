@@ -33,10 +33,11 @@ class Rower {
   }
 
   create(callback) {
+    let counter = 0
     let newElements = []
     this._elements.forEach((element, index) => {
       if (this.matched(element)) {
-        newElements.push(callback(element))
+        newElements.push(callback(element, counter++))
       }
     })
     return this._elements = newElements
