@@ -118,7 +118,7 @@ var Rower = function () {
 
       return this._elements.map(function (element, index) {
         if (_this4.matched(element)) {
-          return _extends({ element: element }, newElement);
+          return _extends({}, element, newElement);
         } else {
           return element;
         }

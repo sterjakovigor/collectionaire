@@ -81,7 +81,7 @@ class Rower {
   update(newElement) {
     return this._elements.map((element, index) => {
       if (this.matched(element)) {
-        return { element, ...newElement }
+        return { ...element, ...newElement }
       } else {
         return element
       }
